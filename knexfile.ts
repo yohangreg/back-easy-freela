@@ -5,11 +5,11 @@ dotenv.config()
 const config: Knex.Config = {
 	client: 'pg',
 	connection: {
-		host: process.env.HOST,
-		user: 'postgres',
-		password: process.env.DATABASE_PASSWORD,
-		database: 'railway', 
-		port: 57592, 
+		host: process.env.PGHOST,
+		user: process.env.PGUSER,
+		password: process.env.PGPASSWORD,
+		database: process.env.PGDATABASE, 
+		port: Number(process.env.PGPORT), 
 	},
 	migrations: {
 		tableName: 'knex_migrations',
